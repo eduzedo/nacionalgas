@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="css/slider.css" />
+ 
+    <title>Nacional Gás</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+    body {
+        font-family: "Open Sans", sans-serif;
+        color: #545454;
+        background-image: url(img/background.jpg);
+        object-fit: cover;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    header {
+        position: sticky;
+        z-index: 1000;
+        top: 0;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        background-color: #EE171F;
+    }
+
+    header .textologo {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        gap: 20px;
+    }
+
+    header .textologo img {
+        width: 200px;
+        object-fit: cover;
+    }
+
+    header .redes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: 20px;
+        gap: 30px;
+    }
+
+    header .redes img {
+        width: 25px;
+    }
+    header .redes a, .content .brindes .botao a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .content .brindes {
+        padding: 20px;
+    }
+
+    .content .brindes h1 {
+        text-align: center;
+    }
+    .content .brindes .util  {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .content .brindes .util img {
+        width: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .content .brindes .util img:hover {
+        box-shadow: 0 10px 20px #868686;
+    }
+
+    .content .brindes .botao {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    .content .brindes .botao button {
+        color: white;
+        background-color: #EE171F;
+        cursor: pointer;
+        font-size: 20px;
+        padding: 20px;
+        border: none;
+        border-radius: 30px;
+    }
+
+    hr {
+        display: block;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        margin-left: 300px;
+        margin-right: 300px;
+        border-style: inset;
+        border-width: 1px;
+    }
+
+    .content .cardtext {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    
+    .content .card {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        gap: 50px;
+        margin-bottom: 100px;
+    }
+
+    .content .card .card1, .content .card .card2, .content .card .card3 {
+        color: #EE171F;
+        background-color: white;
+        width: 250px;
+        height: 200px;
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: 0 0px 10px #868686;
+    }
+    .content .local {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        height: 600px;
+        gap: 30px;
+        padding-right: 100px;
+        padding-left: 100px;
+    }
+
+    .content .local .img-local img {
+        width: 250px;
+        object-fit: cover;
+    }
+
+    .content .pedir-gas {
+        background-image: url(img/background.jpg);
+        height: 600px;
+        object-fit: cover;
+    }
+
+    .content .pedir-gas .texto-pedido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 100px;
+    }
+    .content .pedir-gas .texto-pedido h1{
+        font-size: 40px;
+        margin-bottom: 0;
+    }
+    .content .pedir-gas .texto-pedido p {
+        margin-top: 0;
+    }
+
+    .content .pedir-gas .pedido {
+        display: flex;
+        gap: 100px;
+        align-items: center;
+        justify-content: center;
+    }
+    .content .pedir-gas .pedido .pratinha img {
+        width: 200px;
+    }
+    .content .pedir-gas .pedido .whatsapp .contatos {
+        padding-right: auto;
+    }
+    .content .pedir-gas .pedido .whatsapp {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content .pedir-gas .pedido .whatsapp a{
+        text-decoration: none;
+    }
+
+    .content .pedir-gas .pedido .whatsapp img {
+        width: 20px;
+        padding-right: 10px;
+    }
+
+    .content .pedir-gas .pedido .whatsapp button {
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        color: white;
+        padding: 20px;
+        font-size: 20px;
+        background-color: #17ee17;
+    }
+
+    .content .numero {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+    .content .numero .numeros {
+        display: flex;
+        gap: 40px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: #545454;
+        width: 100%;
+    }
+
+    footer .redes-sociais a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    footer .dev-footer {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        color: black;
+        background-color: #ffffff
+    }
+
+    footer .dev-footer a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /*RESPONSIVIDADE*/
+
+    @media only screen and (max-width: 950px){
+
+        .content {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+
+    * {
+    box-sizing: border-box;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .redes {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .content .brindes .util {
+        display: none;
+    }
+
+    .content .brindes .util img {
+        width: 100px;
+    }
+
+    .content .cardtext {
+        padding-left: 80px;
+        padding-right: 80px;
+        width: 400px;
+    }
+
+    .content .card {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .content .local {
+        display: flex;
+        flex-direction: column;
+        height: 1200px;
+    }
+
+    .local .maps iframe {
+        width: 300px;
+    }
+    .content .pedir-gas {
+        width: 100%;
+    }
+
+    .content .pedir-gas .pedido {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .content .pedir-gas .pedido .pratinha img {
+        width: 200px;
+    }
+
+    .content .pedir-gas .pedido .contatos .whatsapp {
+        margin-top: 0;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content .pedir-gas .pedido .contatos .numero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 70px;
+    }
+
+    .content .pedir-gas .pedido .contatos .numero .numeros {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer {
+        margin-top: 500px;
+    }
+}
+</style>
+<body>
+    <header>
+            <div class="textologo">
+                <a href="#"><img src="img/Nacional-gas-logo.png" alt=""></a>
+                <p>Euclides da Cunha - BA</p>
+            </div>
+            <div class="redes">
+                <a href="https://www.instagram.com/euclidesnacional_gas/" target="_blank"><img src="img/instagram-white-icon.png" alt=""></a>
+                <a href="#onde-estamos">Onde estamos?</a>
+                <a href="#pedir-gas">Entre em contato</a>
+            </div>
+    </header>
+    <div class="content">
+        <div class="brindes">
+            <h1>Peça já seu pratinha e escolha um brinde!</h1>
+        <div class="container-main">
+        <div class="container swiper">
+            <div class="slide-container">
+              <div class="card-wrapper swiper-wrapper">
+                <div class="card-slide swiper-slide">
+                  <div class="image-box">
+                    <img src="img/Balde de pipoca.png" alt="" />
+                  </div>
+                  <div class="profile-details">
+                    <div class="name-job">
+                      <h3 class="name">Balde de Pipoca</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slide swiper-slide">
+                  <div class="image-box">
+                    <img src="img/Copo e Garrafa.png" alt="" />
+                  </div>
+                  <div class="profile-details">
+                    <div class="name-job">
+                      <h3 class="name">Copo / Garrafa</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slide swiper-slide">
+                  <div class="image-box">
+                    <img src="img/Utensílios.png" alt="" />
+                  </div>
+                  <div class="profile-details">
+                    <div class="name-job">
+                      <h3 class="name">Utensílios</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slide swiper-slide">
+                  <div class="image-box">
+                    <img src="img/Jarra e Medidor.png" alt="" />
+                  </div>
+                  <div class="profile-details">
+                    <div class="name-job">
+                      <h3 class="name">Jarra / Medidor</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slide swiper-slide">
+                  <div class="image-box">
+                    <img src="img/Organizadora.png" alt="" />
+                  </div>
+                  <div class="profile-details">
+                    <div class="name-job">
+                      <h3 class="name">Organizadora</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-slide swiper-slide">
+                    <div class="image-box">
+                      <img src="img/Pano de Prato.png" alt="" />
+                    </div>
+                    <div class="profile-details">
+                      <div class="name-job">
+                        <h3 class="name">Pano de Prato</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-slide swiper-slide">
+                    <div class="image-box">
+                      <img src="img/Pote e Tigela.png" alt="" />
+                    </div>
+                    <div class="profile-details">
+                      <div class="name-job">
+                        <h3 class="name">Pote / Tigela</h3>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="botao">
+            <a href="#pedir-gas"><button>Quero pedir meu gás e receber um brinde!</button></a>
+        </div>
+    </div>
+          <!--FIM DO SLIDE  --> 
+
+        <hr>
+        <div class="cardtext">
+            <h1>Porque pedir na Nacional Gás?</h1>
+        </div>
+    <div class="card">
+        <div class="card1">
+            <h2>Entrega rápida</h2>
+            <p>Peça agora e receba seu botijão em até 20 minutos em seu endereço.</p>
+        </div>
+        <div class="card2">
+            <h2>Segurança</h2>
+            <p>Todo botijão da Nacional Gás é detalhadamente inspecionado antes de entrar na sua casa.</p>
+        </div>
+        <div class="card3">
+            <h2>Qualidade</h2>
+            <p>O botijão Nacional Gás é envasado em bases certificadas, sob normas rígidas de produção.</p>
+        </div>
+    </div>
+    <section id="onde-estamos">
+    <div class="local">
+            <div class="img-local">
+                <img src="img/localizacao.png" alt="">
+            </div>
+                <div class="maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.944532918008!2d-39.0117291!3d-10.505035099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70d8ce97d5d9547%3A0xdb0cb29b2127a90!2sR.%20Dom%20Pedro%20I%2C%20449%20-%20Euclides%20da%20Cunha%2C%20BA%2C%2048500-000!5e0!3m2!1spt-BR!2sbr!4v1717198766111!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            <div class="info">
+                <h1>Onde estamos?</h1>
+                <h2>R. Dom Pedro I, 449, Euclides da Cunha - BA, 48500-000</h2>
+                <h1>Horário de funcionamento</h1>
+                <p><strong>Segunda a Sábado:</strong> 07:30 - 19:30<br>
+                    <strong>Domingo:</strong> 07:30 - 14:00</p>
+            </div>
+            </div>
+        </section>
+    <section id="pedir-gas">
+    <div class="pedir-gas">
+            <div class="texto-pedido">
+                <h1>PEÇA JÁ SEU GÁS</h1>
+                <p>A entrega mais rápida da região!</p>
+            </div>
+            <div class="pedido">
+                <div class="pratinha">
+                    <img src="img/pratinha.png" alt="">
+                </div>
+                <div class="contatos">
+                    <div class="whatsapp">
+                        <h2>Faça seu pedido via WhatsApp:</h2>
+                        <a href="https://wa.me/message/FTANRU6BRIYAK1" target="_blank"><button><img src="img/whatsapp-xxl.png" alt="">Pedir via WhatsApp</button></a>
+                    </div>
+                        <div class="numero">
+                            <h2>Ligue para nossos números:</h2>
+                                <div class="numeros">
+                                <div class="tel1">
+                                    <p><strong>Telefone(s): </strong> (75) 3271-1100</p>
+                                </div>
+                                <div class="tel2">
+                                    <p>(75) 9 9955-1100</p>
+                                </div>
+                                <div class="tel3">
+                                    <p>(75) 9 9292-1000</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    </div>
+    <footer>
+        <div class="dev-footer">
+            <p>Desenvolvido por <strong><a href="https://www.linkedin.com/in/eduzedo" target="_blank">Edu D'Azevedo.</a></strong></p>
+        </div>
+    </footer>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
