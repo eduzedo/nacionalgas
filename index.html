@@ -60,8 +60,18 @@
         gap: 30px;
     }
 
+    header .redes a:hover{
+       color: #d6d6d6;
+       transition: color 0.3s ease;
+    }
+
     header .redes img {
         width: 25px;
+        transition: opacity 0.3s ease;;
+    }
+
+    header .redes a img:hover{
+       opacity: 0.5;
     }
     header .redes a, .content .brindes .botao a {
         text-decoration: none;
@@ -106,6 +116,7 @@
         align-items: center;
         justify-content: center;
         margin-top: 20px;
+        margin-bottom: 20px;
     }
     .content .brindes .botao button {
         color: white;
@@ -115,6 +126,11 @@
         padding: 20px;
         border: none;
         border-radius: 30px;
+        transition: transform 0.3s ease;
+    }
+
+    .content .brindes .botao button:hover {
+        transform: scale(1.1); 
     }
 
     hr {
@@ -223,7 +239,12 @@
         color: white;
         padding: 20px;
         font-size: 20px;
+        background-color: #2db62d;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .content .pedir-gas .pedido .whatsapp button:hover {
         background-color: #17ee17;
+        transform: scale(1.1);
     }
 
     .content .numero {
